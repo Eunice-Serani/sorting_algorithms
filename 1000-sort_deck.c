@@ -1,5 +1,6 @@
 #include "deck.h"
 #include <stdio.h>
+
 /**
  *_strcmp - compare two strings
  *@str1: string
