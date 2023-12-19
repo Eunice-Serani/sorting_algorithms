@@ -3,13 +3,13 @@
 
 /**
  * swap_node - Swaps a node for its previous one
- * @node: node
- * @list: node list
+ * @cur_node: current node to be swapped
+ * @list: pointer to doubly linked list
  * Return: return a pointer to a node which was to enter it
  */
-listint_t *swap_node(listint_t *node, listint_t **list)
+listint_t *swap_node(listint_t *cur_node, listint_t **list)
 {
-	listint_t *back = node->prev, *current = node;
+	listint_t *back = cur_node->prev, *current = cur_node;
 
 	back->next = current->next;
 	if (current->next)
@@ -27,7 +27,7 @@ listint_t *swap_node(listint_t *node, listint_t **list)
 /**
  * cocktail_sort_list - This is a cocktail sort implementation
  * working on a double linked lists
- * @list: list
+ * @list: pointer to doubly linked list
  */
 void cocktail_sort_list(listint_t **list)
 {
@@ -37,35 +37,35 @@ void cocktail_sort_list(listint_t **list)
 	if (*list == NULL || (*list)->next == NULL)
 		return;
 
-	node = *list;
+	cur_node = *list;
 	while (swap_done == 1)
 	{
 		swap_done = 0;
 
-		while (node->next)
+		while (cur_node->next)
 		{
-			if (node->n > node->next->n)
+			if (cur_node->n > cur_node->next->n)
 			{
-				node = swap_node(node->next, list);
+				cur_node = swap_node(cur_node->next, list);
 				swap_done = 1;
 				print_list(*list);
 			}
 			else
-				node = node->next;
+				cur_node = node->next;
 		}
 		if (swap_done == 0)
 			break;
 		swap_done = 0;
-		while (node->prev)
+		while (cur_node->prev)
 		{
-			if (node->n < node->prev->n)
+			if (cur_node->n < cur_node->prev->n)
 			{
-				node = swap_node(node, list);
+				cur_node = swap_node(cur_node, list);
 				swap_done = 1;
 				print_list(*list);
 			}
 			else
-				node = node->prev;
+				cur_node = cur_node->prev;
 		}
 	}
 }
