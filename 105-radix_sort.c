@@ -2,12 +2,16 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+int get_max(int *array, int size);
+void radix_counting_sort(int *array, size_t size, int sig, int *output);
+void radix_sort(int *array, size_t size);
+
 /**
-* getMax - A utility function to get maximum value in arr[]
-* @arr: array
-* @n: size of the array
-* Return: array
-*/
+ * getMax - A utility function to get maximum value in arr[]
+ * @arr: array
+ * @n: size of the array
+ * Return: array
+ */
 int getMax(int *arr, int n)
 {
 	int i, max = arr[0];
@@ -19,13 +23,13 @@ int getMax(int *arr, int n)
 }
 
 /**
-* countSort - A function to do counting sort of arr[] according to
-* the digit represented by exp.
-* @arr: array
-* @n: size of the array
-* @exp: exp is 10^i
-* @output: array to save the temporary values
-*/
+ * countSort - A function to do counting sort of arr[] according to
+ * the digit represented by exp.
+ * @arr: array
+ * @n: size of the array
+ * @exp: exp is 10^i
+ * @output: array to save the temporary values
+ */
 void countSort(int *arr, size_t n, int exp, int *output)
 {
 	int i;
@@ -51,11 +55,11 @@ void countSort(int *arr, size_t n, int exp, int *output)
 }
 
 /**
-* radix_sort - The main function to that sorts arr[]
-* of size n using Radix Sort
-* @array: array
-* @size: size of the array
-*/
+ * radix_sort - The main function to that sorts arr[]
+ * of size n using Radix Sort
+ * @array: array
+ * @size: size of the array
+ */
 void radix_sort(int *array, size_t size)
 {
 
