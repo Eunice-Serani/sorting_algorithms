@@ -18,6 +18,7 @@ void swap_ints(int *a, int *b)
  * bubble_sort - This sorts array elements from min to max value
  * @array: Shows the array
  * @size: Shows the array size
+ * Description: Prints the array after each swap
  * Return: Always 0
  */
 void bubble_sort(int *array, size_t size)
