@@ -1,6 +1,20 @@
 #include "sort.h"
 
 /**
+ * swap_ints - This swaps two integers in an array
+ * @a: The 1st integer to swap
+ * @b: The 2nd integer to swap
+ */
+void swap_ints(int a, int b)
+{
+	int tmp;
+
+	tmp = a;
+	a = b;
+	b = tmp;
+}
+
+/**
  * bubble_sort - This sorts array elements from min to max value
  * @array: Shows the array
  * @size: Shows the array size
