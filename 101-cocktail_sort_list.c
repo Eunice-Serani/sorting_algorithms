@@ -32,30 +32,30 @@ listint_t *swap_node(listint_t *node, listint_t **list)
 void cocktail_sort_list(listint_t **list)
 {
 	listint_t *node;
-	int swap_node = 1;
+	int swap_done = 1;
 
 	if (*list == NULL || (*list)->next == NULL)
 		return;
 
 	node = *list;
-	while (swap_node == 1)
+	while (swap_done == 1)
 	{
-		swap_node = 0;
+		swap_done = 0;
 
 		while (node->next)
 		{
 			if (node->n > node->next->n)
 			{
 				node = swap_node(node->next, list);
-				swap_node = 1;
+				swap_done = 1;
 				print_list(*list);
 			}
 			else
 				node = node->next;
 		}
-		if (swap_node == 0)
+		if (swap_done== 0)
 			break;
-		swap_node = 0;
+		swap_done = 0;
 		while (node->prev)
 		{
 			if (node->n < node->prev->n)
