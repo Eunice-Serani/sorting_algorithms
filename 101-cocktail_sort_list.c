@@ -53,7 +53,7 @@ void cocktail_sort_list(listint_t **list)
 			else
 				node = node->next;
 		}
-		if (swap_done== 0)
+		if (swap_done == 0)
 			break;
 		swap_done = 0;
 		while (node->prev)
