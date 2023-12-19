@@ -2,8 +2,8 @@
 
 /**
  * bubble_sort - This sorts array elements from min to max value
- * @array: array
- * @size: array size
+ * @array: Shows the array
+ * @size: Shows the array size
  * Return: Always 0
  */
 void bubble_sort(int *array, size_t size)
